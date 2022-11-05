@@ -14,27 +14,22 @@ def predict():
     '''
     Memvalidasi data siswa, jika sesuai akan menampilkan nilainya.
     '''
-    nama, nim, univ, prodi, nomor_hp  = [x for x in request.form.values()]
+    nama, id_msib, univ, prodi, nomor_hp  = [x for x in request.form.values()]
 
     data = []
 
     data.append(str(nama).lower())
-    data.append(str(nim).lower())
+    data.append(int(id_msib))
     data.append(str(univ).lower())
     data.append(str(prodi).lower())
     data.append(int(nomor_hp))
 
+
     dir = "database/database.xlsx"
     df = pd.read_excel(dir)
-    
-    df['nim'] = str(df['nim'])
-    # df['ds'] = int(df['ds'])
-    # ds['nlp'] = int(ds['nlp'])
-    # ds['cv'] = int(ds['cv'])
-    # ds['tech'] = int(ds['tech'])
+
 
     df['nama'] = df['nama'].str.lower()
-    df['nim'] = df['nim'].str.lower()
     df['univ'] = df['univ'].str.lower()
     df['prodi'] = df['prodi'].str.lower()
 
@@ -48,9 +43,13 @@ def predict():
     hasil = ''
 
     for x in df.index:
-        name = df['nama'][x]
+        A = df['nama'][x]
+        B = df['id_msib'][x]
+        C = df['univ'][x]
+        D = df['prodi'][x]
+        E = df['nohp'][x]
         
-        if data[0] == name:
+        if data[0] == A and data[1] == B and data[2] == C and data[3] == D and data[4] == E:
             ds = (df['ds'][x])
             nlp = (df['nlp'][x])
             cv = (df['cv'][x])
@@ -60,10 +59,10 @@ def predict():
             break
         
         elif x == size:
-            hasil = 'Data tidak ditemukan !'
+            hasil = 'Maaf, Data tidak ditemukan !'
     
 
-    return render_template('index.html', nilai_ds=ds, nilai_nlp=nlp, nilai_cv=cv, nilai_tech=tech, nama=nama, nim=nim, univ=univ, prodi=prodi, nomor_hp=nomor_hp, hasil=hasil)
+    return render_template('index.html', nilai_ds=ds, nilai_nlp=nlp, nilai_cv=cv, nilai_tech=tech, nama=nama, id_msib=id_msib, univ=univ, prodi=prodi, nomor_hp=nomor_hp, hasil=hasil)
 
 
 if __name__ == '__main__':
