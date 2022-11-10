@@ -28,7 +28,7 @@ def predict():
     data.append(int(nomor_hp))
 
     #memanggil berkas database
-    dir = "database/database.xlsx"
+    dir = "database/database_apollo_class.xlsx"
     df = pd.read_excel(dir)
 
     #didatabase pada kolom nama, univ, prodi perlu di lowercase agar perbandingan huruf nya sama dengan inputan
@@ -43,6 +43,13 @@ def predict():
     #variabel wadah untuk nilai post test
     ds, nlp, cv, tech = 0, 0, 0, 0
 
+    nilai_intro_to_ai_1, nilai_intro_to_ai_2, nilai_intro_to_ai_3, nilai_intro_to_ai_4, nilai_intro_to_ai_5 = 0, 0, 0, 0, 0
+    absen_intro_ai_1, absen_intro_ai_2, absen_intro_ai_3, absen_intro_ai_4, absen_intro_ai_5 = 0, 0, 0, 0, 0
+    posttest_intro_ai, final_intro_ai, alphabet_intro_ai = 0, 0, ""
+
+    #inisialisasi status absen, dikarenakan data absen hanya 0,1,K
+    status_absen = {1 : 'Hadir', 0 : 'Tidak Hadir', 'K' : 'Durasi Kurang'}
+    
     #variabel wadah untuk menampilkan pesan berhasil atau gagal
     hasil = ''
 
@@ -60,7 +67,24 @@ def predict():
 
         #memvalidasi apakah nama, id_msib, univ, prodi, nohp sesuai atau tidak
         if (data[0] == A) and (data[1] == B) and (data[2] == C) and (data[3] == D) and (data[4] == E):
-            #jika sesuai maka akan mengambil data nilai ds, nlp, cv, tech
+            #jika sesuai maka akan mengambil data nilai dari intro to ai
+            nilai_intro_to_ai_1 = (df['nilai_intro_to_ai_1'][x])
+            nilai_intro_to_ai_2 = (df['nilai_intro_to_ai_2'][x])
+            nilai_intro_to_ai_3 = (df['nilai_intro_to_ai_3'][x])
+            nilai_intro_to_ai_4 = (df['nilai_intro_to_ai_4'][x])
+            nilai_intro_to_ai_5 = (df['nilai_intro_to_ai_5'][x])
+
+            absen_intro_ai_1 = status_absen[(df['absen_intro_ai_1'][x])]
+            absen_intro_ai_2 = status_absen[(df['absen_intro_ai_2'][x])]
+            absen_intro_ai_3 = status_absen[(df['absen_intro_ai_3'][x])]
+            absen_intro_ai_4 = status_absen[(df['absen_intro_ai_4'][x])]
+            absen_intro_ai_5 = status_absen[(df['absen_intro_ai_5'][x])]
+
+            posttest_intro_ai = (df['posttest_intro_ai'][x])
+            final_intro_ai = (df['final_intro_ai'][x])
+            alphabet_intro_ai = (df['alphabet_intro_ai'][x])
+
+            #jika sesuai maka akan mengambil data nilai dari post test ds, nlp, cv, tech
             ds = (df['ds'][x])
             nlp = (df['nlp'][x])
             cv = (df['cv'][x])
@@ -76,7 +100,18 @@ def predict():
             hasil = 'Maaf, Data tidak ditemukan !'
     
 
-    return render_template('index.html', nilai_ds=ds, nilai_nlp=nlp, nilai_cv=cv, nilai_tech=tech, nama=nama, id_msib=id_msib, univ=univ, prodi=prodi, nomor_hp=nomor_hp, hasil=hasil)
+    return render_template('index.html', nilai_ds=ds, nilai_nlp=nlp, nilai_cv=cv, nilai_tech=tech, 
+                            nama=nama, id_msib=id_msib, univ=univ, prodi=prodi, nomor_hp=nomor_hp, hasil=hasil,
+                            
+                            nilai_intro_to_ai_1=nilai_intro_to_ai_1, nilai_intro_to_ai_2=nilai_intro_to_ai_2,
+                            nilai_intro_to_ai_3=nilai_intro_to_ai_3, nilai_intro_to_ai_4=nilai_intro_to_ai_4,
+                            nilai_intro_to_ai_5=nilai_intro_to_ai_5,
+                            
+                            absen_intro_ai_1=absen_intro_ai_1, absen_intro_ai_2=absen_intro_ai_2,
+                            absen_intro_ai_3=absen_intro_ai_3, absen_intro_ai_4=absen_intro_ai_4,
+                            absen_intro_ai_5=absen_intro_ai_5,
+                            
+                            posttest_intro_ai=posttest_intro_ai, final_intro_ai=final_intro_ai, alphabet_intro_ai=alphabet_intro_ai)
 
 
 if __name__ == '__main__':
