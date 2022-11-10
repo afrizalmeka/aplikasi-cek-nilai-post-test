@@ -12,7 +12,7 @@
     </head>
     <body
         class="
-            flex flex-col
+            flex flex-row
             justify-between
             item-center
             p-8
@@ -22,17 +22,19 @@
             to-blue-500
             text-gray-800
             md:flex-row
+            gap-10
+            flex-wrap
         "
     >
-        <main class="bg-white p-16 rounded-lg">
-            <h1 class="text-3xl font-bold mb-8">
+        <main class="flex-1 bg-white p-8 rounded-lg self-start">
+            <h1 class="text-4xl font-bold mb-8 pl-8">
                 Data Diri Siswa:
             </h1>
 
             <form
                 action="{{ url_for('predict') }}"
                 method="post"
-                class="flex flex-col"
+                class="flex flex-col px-8"
             >
 
                 <label for="inputNanme4" class="form-label">Nama Lengkap :</label>
@@ -46,7 +48,7 @@
                     value="{{ nama }}"
                 >
 
-                <label for="inputNanme4" class="form-label">ID MSIB :</label>
+                <label for="inputNanme4" class="form-label mt-3">ID MSIB :</label>
                 <input 
                     type="number" 
                     class="p-4 bg-gray-100 rounded-md" 
@@ -57,7 +59,7 @@
                     value="{{ id_msib }}"
                 >
 
-                <label for="inputNanme4" class="form-label">Universitas :</label>
+                <label for="inputNanme4" class="form-label mt-3">Universitas :</label>
                 <input 
                     type="text" 
                     class="p-4 bg-gray-100 rounded-md" 
@@ -68,7 +70,7 @@
                     value="{{ univ }}"
                 >
 
-                <label for="inputNanme4" class="form-label">Prodi :</label>
+                <label for="inputNanme4" class="form-label mt-3">Prodi :</label>
                 <input 
                     type="text" 
                     class="p-4 bg-gray-100 rounded-md" 
@@ -79,7 +81,7 @@
                     value="{{ prodi }}"
                 >
 
-                <label for="inputNanme4" class="form-label">Nomor Handphone :</label>
+                <label for="inputNanme4" class="form-label mt-3">Nomor Handphone :</label>
                 <input 
                     type="number" 
                     class="p-4 bg-gray-100 rounded-md" 
@@ -124,16 +126,64 @@
                 </button>
             </form>
         </main>
-        <section class="mt-8 h-full flex-auto rounded-lg md:mt-0 md:ml-8">
-            <div class="bg-white p-16 rounded-lg">
+        <section class="h-full flex flex-col flex-1 rounded-lg gap-5">
+            <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
                 <h2 class="text-2xl mb-8">
                     Hasil Nilai Post Test 2 adalah
                 </h2>
-                <div class="mt-8">
-                    <p>Data Science : {{ nilai_ds }}</p>
-                    <p>Natural Language Processing : {{ nilai_nlp }}</p>
-                    <p>Computer Vision : {{ nilai_cv }}</p>
-                    <p>Technical Skill : {{ nilai_tech }}</p>
+                <div class="mt-8 grid grid-cols-2">
+                    <p>Data Science</p> 
+                    <p>: {{nilai_ds}}</p>
+                    <p>Natural Language Processing</p>
+                    <p>: {{nilai_nlp}}</p>
+                    <p>Computer Vision</p>
+                    <p>: {{nilai_cv}}</p>
+                    <p>Technical Skill</p>
+                    <p>: {{nilai_tech}}</p>
+                </div>
+                {% if hasil %}
+                <br>
+                <h3 class="text-2xl mb-8">
+                    {{ hasil }}
+                </h3>
+                {% endif %}
+            </div>
+
+            <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
+                <h2 class="text-2xl mb-8">
+                    Hasil Nilai Post Test 2 adalah
+                </h2>
+                <div class="mt-8 grid grid-cols-2">
+                    <p>Data Science</p> 
+                    <p>: {{nilai_ds}}</p>
+                    <p>Natural Language Processing</p>
+                    <p>: {{nilai_nlp}}</p>
+                    <p>Computer Vision</p>
+                    <p>: {{nilai_cv}}</p>
+                    <p>Technical Skill</p>
+                    <p>: {{nilai_tech}}</p>
+                </div>
+                {% if hasil %}
+                <br>
+                <h3 class="text-2xl mb-8">
+                    {{ hasil }}
+                </h3>
+                {% endif %}
+            </div>
+
+            <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
+                <h2 class="text-2xl mb-8">
+                    Hasil Nilai Post Test 2 adalah
+                </h2>
+                <div class="mt-8 grid grid-cols-2">
+                    <p>Data Science</p> 
+                    <p>: {{nilai_ds}}</p>
+                    <p>Natural Language Processing</p>
+                    <p>: {{nilai_nlp}}</p>
+                    <p>Computer Vision</p>
+                    <p>: {{nilai_cv}}</p>
+                    <p>Technical Skill</p>
+                    <p>: {{nilai_tech}}</p>
                 </div>
                 {% if hasil %}
                 <br>

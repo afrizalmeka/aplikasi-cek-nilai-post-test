@@ -21,10 +21,10 @@ def predict():
 
     #menambah value di lisr "data"
     #tujuan lowercase pada string, supaya agar kecil semua huruf nya. untuk keperluan validasi
-    data.append(str(nama).lower())
+    data.append(str(nama).lower().strip())
     data.append(int(id_msib))
-    data.append(str(univ).lower())
-    data.append(str(prodi).lower())
+    data.append(str(univ).lower().strip())
+    data.append(str(prodi).lower().strip())
     data.append(int(nomor_hp))
 
     #memanggil berkas database
@@ -57,6 +57,7 @@ def predict():
         D = df['prodi'][x]
         E = df['nohp'][x]
         
+
         #memvalidasi apakah nama, id_msib, univ, prodi, nohp sesuai atau tidak
         if (data[0] == A) and (data[1] == B) and (data[2] == C) and (data[3] == D) and (data[4] == E):
             #jika sesuai maka akan mengambil data nilai ds, nlp, cv, tech
