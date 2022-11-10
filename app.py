@@ -4,7 +4,6 @@ import pandas as pd
 app = Flask(__name__)
 
 
-
 @app.route('/')
 def index():
     return render_template('index.html', nilai_ds=0, nilai_nlp=0, nilai_cv=0, nilai_tech=0, hasil='')
@@ -43,9 +42,12 @@ def predict():
     #variabel wadah untuk nilai post test
     ds, nlp, cv, tech = 0, 0, 0, 0
 
+    #variabel wadah untuk nilai dan absen intro to ai
     nilai_intro_to_ai_1, nilai_intro_to_ai_2, nilai_intro_to_ai_3, nilai_intro_to_ai_4, nilai_intro_to_ai_5 = 0, 0, 0, 0, 0
     absen_intro_ai_1, absen_intro_ai_2, absen_intro_ai_3, absen_intro_ai_4, absen_intro_ai_5 = 0, 0, 0, 0, 0
     posttest_intro_ai, final_intro_ai, alphabet_intro_ai = 0, 0, ""
+
+    #varibel wadah untuk nilai dan absen python
 
     #inisialisasi status absen, dikarenakan data absen hanya 0,1,K
     status_absen = {1 : 'Hadir', 0 : 'Tidak Hadir', 'K' : 'Durasi Kurang'}
