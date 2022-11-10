@@ -70,6 +70,13 @@
                     value="{{ nomor_hp }}"
                 >
 
+                {% if hasil %}
+                <br>
+                <h3 class="text-2xl mb-8">
+                    {{ hasil }}
+                </h3>
+                {% endif %}
+
                 <button
                     type="submit"
                     class="
@@ -118,15 +125,14 @@
                     <p>: 2 sks</p>
                     <p>3. Pemrograman Python</p>
                     <p>: 3 sks</p>		
-                    <p>4. Metode Penelitian AI</p>
+                    <p>4. Metode Penelitian AI (ML, DS, NLP, CV, Tech)</p>
                     <p>: 3 sks</p>
                     <p>5. Etika Profesi & Kewirausahaan</p>
                     <p>: 3 sks</p>
                     <p>6. Proyek Akhir</p>
-                    <p>: 6 sks (Sedang berlangsung)</p>
-                    
-                    <p><br></p><p></p>
-                    
+                    <p>: 6 sks (sedang berlangsung)</p>
+                </div>
+                <div class="mt-8">
                     <p class="font-bold">Rumus Perhitungan Nilai Akhir :</p>
                     <p></p>
                     <p>Presensi 30% + Tugas 30% + Postest 40%</p>
@@ -139,15 +145,15 @@
                 </h2>
                 <div class="mt-8 grid grid-cols-2">
                     <p>Tugas 1</p> 
-                    <p>: {{nilai_intro_to_ai_1}}</p>
+                    <p>: {{nilai_intro_ai_1}}</p>
                     <p>Tugas 2</p>
-                    <p>: {{nilai_intro_to_ai_2}}</p>
+                    <p>: {{nilai_intro_ai_2}}</p>
                     <p>Tugas 3</p>
-                    <p>: {{nilai_intro_to_ai_3}}</p>
+                    <p>: {{nilai_intro_ai_3}}</p>
                     <p>Tugas 4</p>
-                    <p>: {{nilai_intro_to_ai_4}}</p>
+                    <p>: {{nilai_intro_ai_4}}</p>
                     <p>Tugas 5</p>
-                    <p>: {{nilai_intro_to_ai_5}}</p>
+                    <p>: {{nilai_intro_ai_5}}</p>
 
                     <p><br></p>
                     <p><br></p>
@@ -180,18 +186,308 @@
             </div>
 
             <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
-                <h2 class="text-2xl mb-8">
-                    Hasil Nilai Post Test 2 adalah
+                <h2 class="text-2xl mb-8 font-bold">
+                    Pemrograman Python
                 </h2>
                 <div class="mt-8 grid grid-cols-2">
-                    <p>Data Science</p> 
-                    <p>: {{nilai_ds}}</p>
-                    <p>Natural Language Processing</p>
-                    <p>: {{nilai_nlp}}</p>
-                    <p>Computer Vision</p>
-                    <p>: {{nilai_cv}}</p>
-                    <p>Technical Skill</p>
-                    <p>: {{nilai_tech}}</p>
+                    <p>Tugas 1</p> 
+                    <p>: {{nilai_python_1}}</p>
+                    <p>Tugas 2</p>
+                    <p>: {{nilai_python_2}}</p>
+                    <p>Tugas 3</p>
+                    <p>: {{nilai_python_3}}</p>
+                    <p>Tugas 4</p>
+                    <p>: {{nilai_python_4}}</p>
+                    <p>Tugas 5</p>
+                    <p>: {{nilai_python_5}}</p>
+                    <p>Tugas 6</p>
+                    <p>: {{nilai_python_3}}</p>
+                    <p>Tugas 7</p>
+                    <p>: {{nilai_python_4}}</p>
+                    <p>Tugas 8</p>
+                    <p>: {{nilai_python_5}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Absen 1 pada 22/08</p> 
+                    <p>: {{absen_python_1}}</p>
+                    <p>Absen 2 pada 23/08</p>
+                    <p>: {{absen_python_2}}</p>
+                    <p>Absen 3 pada 24/08</p>
+                    <p>: {{absen_python_3}}</p>
+                    <p>Absen 4 pada 25/08</p>
+                    <p>: {{absen_python_4}}</p>
+                    <p>Absen 5 pada 26/08</p>
+                    <p>: {{absen_python_5}}</p>
+                    <p>Absen 6 pada 24/08</p>
+                    <p>: {{absen_python_3}}</p>
+                    <p>Absen 7 pada 25/08</p>
+                    <p>: {{absen_python_4}}</p>
+                    <p>Absen 8 pada 26/08</p>
+                    <p>: {{absen_python_5}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Post Test</p>
+                    <p>: {{posttest_python}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p class="font-bold">Nilai Akhir</p>
+                    <p>: {{final_python}}</p>
+                    <p class="font-bold">Huruf</p>
+                    <p>: {{alphabet_python}}</p>
+                </div>
+            </div>
+
+            <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
+                <h2 class="text-2xl mb-8 font-bold">
+                    Siklus Proyek AI
+                </h2>
+                <div class="mt-8 grid grid-cols-2">
+                    <p>Tugas 1</p> 
+                    <p>: {{nilai_siklus_1}}</p>
+                    <p>Tugas 2</p>
+                    <p>: {{nilai_siklus_2}}</p>
+                    <p>Tugas 3</p>
+                    <p>: {{nilai_siklus_3}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Absen 1 pada 22/08</p> 
+                    <p>: {{absen_siklus_1}}</p>
+                    <p>Absen 2 pada 23/08</p>
+                    <p>: {{absen_siklus_2}}</p>
+                    <p>Absen 3 pada 24/08</p>
+                    <p>: {{absen_siklus_3}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Post Test</p>
+                    <p>: {{posttest_siklus}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p class="font-bold">Nilai Akhir</p>
+                    <p>: {{final_siklus}}</p>
+                    <p class="font-bold">Huruf</p>
+                    <p>: {{alphabet_siklus}}</p>
+                </div>
+            </div>
+
+            <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
+                <h2 class="text-2xl mb-8 font-bold">
+                    Metode Penelitian AI (ML)
+                </h2>
+                <div class="mt-8 grid grid-cols-2">
+                    <p>Tugas 1</p> 
+                    <p>: {{nilai_ml_1}}</p>
+                    <p>Tugas 2</p>
+                    <p>: {{nilai_ml_2}}</p>
+                    <p>Tugas 3</p>
+                    <p>: {{nilai_ml_3}}</p>
+                    <p>Tugas 4</p>
+                    <p>: {{nilai_ml_4}}</p>
+                    <p>Tugas 5</p>
+                    <p>: {{nilai_ml_5}}</p>
+                    <p>Tugas 6</p>
+                    <p>: {{nilai_ml_3}}</p>
+                    <p>Tugas 7</p>
+                    <p>: {{nilai_ml_4}}</p>
+                    <p>Tugas 8</p>
+                    <p>: {{nilai_ml_5}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Absen 1 pada 22/08</p> 
+                    <p>: {{absen_ml_1}}</p>
+                    <p>Absen 2 pada 23/08</p>
+                    <p>: {{absen_ml_2}}</p>
+                    <p>Absen 3 pada 24/08</p>
+                    <p>: {{absen_ml_3}}</p>
+                    <p>Absen 4 pada 25/08</p>
+                    <p>: {{absen_ml_4}}</p>
+                    <p>Absen 5 pada 26/08</p>
+                    <p>: {{absen_ml_5}}</p>
+                    <p>Absen 6 pada 24/08</p>
+                    <p>: {{absen_ml_3}}</p>
+                    <p>Absen 7 pada 25/08</p>
+                    <p>: {{absen_ml_4}}</p>
+                    <p>Absen 8 pada 26/08</p>
+                    <p>: {{absen_ml_5}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Post Test</p>
+                    <p>: {{posttest_ml}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p class="font-bold">Nilai Akhir</p>
+                    <p>: {{final_ml}}</p>
+                    <p class="font-bold">Huruf</p>
+                    <p>: {{alphabet_ml}}</p>
+                </div>
+            </div>
+
+            <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
+                <h2 class="text-2xl mb-8 font-bold">
+                    Metode Penelitian AI (Domain Data Science)
+                </h2>
+                <div class="mt-8 grid grid-cols-2">
+                    <p>Tugas 1</p> 
+                    <p>: {{nilai_ds_1}}</p>
+                    <p>Tugas 2</p>
+                    <p>: {{nilai_ds_2}}</p>
+                    <p>Tugas 3</p>
+                    <p>: {{nilai_ds_3}}</p>
+                    <p>Tugas 4</p>
+                    <p>: {{nilai_ds_4}}</p>
+                    <p>Tugas 5</p>
+                    <p>: {{nilai_ds_5}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Total Absen dalam 1 minggu</p> 
+                    <p>: {{total_absen_ds}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Post Test</p>
+                    <p>: {{posttest_ds}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p class="font-bold">Nilai Akhir</p>
+                    <p>: {{final_ds}}</p>
+                    <p class="font-bold">Huruf</p>
+                    <p>: {{alphabet_ds}}</p>
+                </div>
+            </div>
+
+            <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
+                <h2 class="text-2xl mb-8 font-bold">
+                    Metode Penelitian AI (Domain Natural Language Processing)
+                </h2>
+                <div class="mt-8 grid grid-cols-2">
+                    <p>Tugas 1</p> 
+                    <p>: {{nilai_nlp_1}}</p>
+                    <p>Tugas 2</p>
+                    <p>: {{nilai_nlp_2}}</p>
+                    <p>Tugas 3</p>
+                    <p>: {{nilai_nlp_3}}</p>
+                    <p>Tugas 4</p>
+                    <p>: {{nilai_nlp_4}}</p>
+                    <p>Tugas 5</p>
+                    <p>: {{nilai_nlp_5}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Total Absen dalam 1 minggu</p> 
+                    <p>: {{total_absen_nlp}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Post Test</p>
+                    <p>: {{posttest_nlp}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p class="font-bold">Nilai Akhir</p>
+                    <p>: {{final_nlp}}</p>
+                    <p class="font-bold">Huruf</p>
+                    <p>: {{alphabet_nlp}}</p>
+                </div>
+            </div>
+
+            <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
+                <h2 class="text-2xl mb-8 font-bold">
+                    Metode Penelitian AI (Domain Computer Vision)
+                </h2>
+                <div class="mt-8 grid grid-cols-2">
+                    <p>Tugas 1</p> 
+                    <p>: {{nilai_cv_1}}</p>
+                    <p>Tugas 2</p>
+                    <p>: {{nilai_cv_2}}</p>
+                    <p>Tugas 3</p>
+                    <p>: {{nilai_cv_3}}</p>
+                    <p>Tugas 4</p>
+                    <p>: {{nilai_cv_4}}</p>
+                    <p>Tugas 5</p>
+                    <p>: {{nilai_cv_5}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Total Absen dalam 1 minggu</p> 
+                    <p>: {{total_absen_cv}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Post Test</p>
+                    <p>: {{posttest_cv}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p class="font-bold">Nilai Akhir</p>
+                    <p>: {{final_cv}}</p>
+                    <p class="font-bold">Huruf</p>
+                    <p>: {{alphabet_cv}}</p>
+                </div>
+            </div>
+
+            <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
+                <h2 class="text-2xl mb-8 font-bold">
+                    Metode Penelitian AI (Domain Technical Skill)
+                </h2>
+                <div class="mt-8 grid grid-cols-2">
+                    <p>Tugas 1</p> 
+                    <p>: {{nilai_tech_1}}</p>
+                    <p>Tugas 2</p>
+                    <p>: {{nilai_tech_2}}</p>
+                    <p>Tugas 3</p>
+                    <p>: {{nilai_tech_3}}</p>
+                    <p>Tugas 4</p>
+                    <p>: {{nilai_tech_4}}</p>
+                    <p>Tugas 5</p>
+                    <p>: {{nilai_tech_5}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Total Absen dalam 1 minggu</p> 
+                    <p>: {{total_absen_tech}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p>Post Test</p>
+                    <p>: {{posttest_tech}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p class="font-bold">Nilai Akhir</p>
+                    <p>: {{final_tech}}</p>
+                    <p class="font-bold">Huruf</p>
+                    <p>: {{alphabet_tech}}</p>
                 </div>
             </div>
         </section>
