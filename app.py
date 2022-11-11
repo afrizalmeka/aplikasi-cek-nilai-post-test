@@ -50,7 +50,10 @@ def predict():
     df8 = pd.read_excel(dir, sheet_name="tech")
     df8 = df8.drop(['nama'], axis=1)
 
-    df = pd.concat([df1, df2, df3, df4, df5, df6, df7, df8], axis=1)
+    df9 = pd.read_excel(dir, sheet_name="lifeskill")
+    df9 = df9.drop(['nama'], axis=1)
+
+    df = pd.concat([df1, df2, df3, df4, df5, df6, df7, df8, df9], axis=1)
 
     #didatabase pada kolom nama, univ, prodi perlu di lowercase agar perbandingan huruf nya sama dengan inputan
     df['nama'] = df['nama'].str.lower()
@@ -81,7 +84,34 @@ def predict():
     nilai_ml_1, nilai_ml_2, nilai_ml_3, nilai_ml_4, nilai_ml_5, nilai_ml_6, nilai_ml_7, nilai_ml_8 = 0, 0, 0, 0, 0, 0, 0, 0
     absen_ml_1, absen_ml_2, absen_ml_3, absen_ml_4, absen_ml_5, absen_ml_6, absen_ml_7, absen_ml_8 = "", "", "", "", "", "", "", ""
     posttest_ml, final_ml, alphabet_ml = 0, 0, ""
-    
+
+    #varibel wadah untuk nilai dan absen domain ds
+    nilai_ds_1, nilai_ds_2, nilai_ds_3, nilai_ds_4, nilai_ds_5 = 0, 0, 0, 0, 0
+    total_absen_ds = 0
+    posttest_ds, final_ds, alphabet_ds = 0, 0, ""
+
+    #varibel wadah untuk nilai dan absen domain nlp
+    nilai_nlp_1, nilai_nlp_2, nilai_nlp_3, nilai_nlp_4, nilai_nlp_5 = 0, 0, 0, 0, 0
+    total_absen_nlp = 0
+    posttest_nlp, final_nlp, alphabet_nlp = 0, 0, ""
+
+    #varibel wadah untuk nilai dan absen domain cv
+    nilai_cv_1, nilai_cv_2, nilai_cv_3, nilai_cv_4, nilai_cv_5 = 0, 0, 0, 0, 0
+    total_absen_cv = 0
+    posttest_cv, final_cv, alphabet_cv = 0, 0, ""
+
+    #varibel wadah untuk nilai dan absen domain tech
+    nilai_tech_1, nilai_tech_2, nilai_tech_3, nilai_tech_4, nilai_tech_5 = 0, 0, 0, 0, 0
+    total_absen_tech = 0
+    posttest_tech, final_tech, alphabet_tech = 0, 0, ""
+
+    #variabel wadah untuk nilai dan absen total metode penelitian ai
+    final_metode_penelitian = 0
+    alphabet_metode_penelitian = ""
+
+    #variabel wadah untuk nilai akhir life skill
+    final_lifeskill = 0
+    alphabet_lifeskill = ""
 
     #inisialisasi status absen, dikarenakan data absen hanya 0,1,K
     status_absen = {1 : 'Hadir', 0 : 'Tidak Hadir', 'K' : 'Durasi Kurang'}
@@ -102,6 +132,19 @@ def predict():
         #memvalidasi apakah nama, id_msib, univ, prodi, nohp sesuai atau tidak
         if (data[0] == A) and (data[1] == B) and (data[2] == C):
             
+            #fungsi untuk menentukan alphabet nilai akhir
+            def alphabet_nilai(nilai):
+                if nilai >= 80:
+                    return "A"
+                elif nilai >= 70:
+                    return "B"
+                elif nilai >= 50:
+                    return "C"
+                elif nilai >= 40:
+                    return "D"
+                else:
+                    return "E"
+
             #jika sesuai maka akan mengambil data nilai dan absen dari intro to ai
             nilai_intro_ai_1 = (df['nilai_intro_ai_1'][x])
             nilai_intro_ai_2 = (df['nilai_intro_ai_2'][x])
@@ -214,6 +257,14 @@ def predict():
             final_tech = (df['final_tech'][x])
             alphabet_tech = (df['alphabet_tech'][x])
 
+            #jika sesuai maka akan menghitung nilai final metode penelitian
+            final_metode_penelitian = (final_ml + final_ds + final_nlp + final_cv + final_tech) / 5
+            alphabet_metode_penelitian = alphabet_nilai(final_metode_penelitian)
+
+            #jika sesuai maka akan mengambil data nilai life skill
+            final_lifeskill = (df['final_lifeskill'][x])
+            alphabet_lifeskill = alphabet_nilai(final_lifeskill)
+
             #kemudian menampilkan pesan berhasil jika sesuai datanya
             hasil = 'Selamat, Data ditemukan !'
             #akan melakukan break jika sudah berhasil menemukan data nya, dan tidak melanjutkan perulangannya
@@ -283,6 +334,10 @@ def predict():
                             nilai_tech_5=nilai_tech_5,
                             total_absen_tech=total_absen_tech,
                             posttest_tech=posttest_tech, final_tech=final_tech, alphabet_tech=alphabet_tech,
+                            
+                            final_metode_penelitian=final_metode_penelitian, alphabet_metode_penelitian=alphabet_metode_penelitian,
+
+                            final_lifeskill=final_lifeskill, alphabet_lifeskill=alphabet_lifeskill
                             )
 
 

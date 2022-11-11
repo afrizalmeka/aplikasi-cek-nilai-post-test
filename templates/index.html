@@ -121,10 +121,10 @@
                     <p></p>
                     <p>1. Logika dan Konsep Teknologi AI</p>
                     <p>: 3 sks</p>
-                    <p>2. Siklus Proyek AI</p>
-                    <p>: 2 sks</p>
-                    <p>3. Pemrograman Python</p>
-                    <p>: 3 sks</p>		
+                    <p>2. Pemrograman Python</p>
+                    <p>: 3 sks</p>
+                    <p>3. Siklus Proyek AI</p>
+                    <p>: 2 sks</p>	
                     <p>4. Metode Penelitian AI (ML, DS, NLP, CV, Tech)</p>
                     <p>: 3 sks</p>
                     <p>5. Etika Profesi & Kewirausahaan</p>
@@ -138,10 +138,11 @@
                     <p>Presensi 30% + Tugas 30% + Postest 40%</p>
                 </div>
             </div>
-            
+
+            {% if hasil == "Selamat, Data ditemukan !"%}
             <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
                 <h2 class="text-2xl mb-8 font-bold">
-                    Logika dan Konsep Teknologi AI
+                    1. Logika dan Konsep Teknologi AI
                 </h2>
                 <div class="mt-8 grid grid-cols-2">
                     <p>Tugas 1</p> 
@@ -187,7 +188,7 @@
 
             <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
                 <h2 class="text-2xl mb-8 font-bold">
-                    Pemrograman Python
+                    2. Pemrograman Python
                 </h2>
                 <div class="mt-8 grid grid-cols-2">
                     <p>Tugas 1</p> 
@@ -245,7 +246,7 @@
 
             <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
                 <h2 class="text-2xl mb-8 font-bold">
-                    Siklus Proyek AI
+                    3. Siklus Proyek AI
                 </h2>
                 <div class="mt-8 grid grid-cols-2">
                     <p>Tugas 1</p> 
@@ -283,7 +284,7 @@
 
             <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
                 <h2 class="text-2xl mb-8 font-bold">
-                    Metode Penelitian AI (ML)
+                    4.A. Metode Penelitian AI (ML)
                 </h2>
                 <div class="mt-8 grid grid-cols-2">
                     <p>Tugas 1</p> 
@@ -341,7 +342,7 @@
 
             <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
                 <h2 class="text-2xl mb-8 font-bold">
-                    Metode Penelitian AI (Domain Data Science)
+                    4.B. Metode Penelitian AI (Domain Data Science)
                 </h2>
                 <div class="mt-8 grid grid-cols-2">
                     <p>Tugas 1</p> 
@@ -379,7 +380,7 @@
 
             <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
                 <h2 class="text-2xl mb-8 font-bold">
-                    Metode Penelitian AI (Domain Natural Language Processing)
+                    4.C. Metode Penelitian AI (Domain Natural Language Processing)
                 </h2>
                 <div class="mt-8 grid grid-cols-2">
                     <p>Tugas 1</p> 
@@ -417,7 +418,7 @@
 
             <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
                 <h2 class="text-2xl mb-8 font-bold">
-                    Metode Penelitian AI (Domain Computer Vision)
+                    4.D. Metode Penelitian AI (Domain Computer Vision)
                 </h2>
                 <div class="mt-8 grid grid-cols-2">
                     <p>Tugas 1</p> 
@@ -455,7 +456,7 @@
 
             <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
                 <h2 class="text-2xl mb-8 font-bold">
-                    Metode Penelitian AI (Domain Technical Skill)
+                    4.E. Metode Penelitian AI (Domain Technical Skill)
                 </h2>
                 <div class="mt-8 grid grid-cols-2">
                     <p>Tugas 1</p> 
@@ -490,6 +491,61 @@
                     <p>: {{alphabet_tech}}</p>
                 </div>
             </div>
+
+            <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
+                <h2 class="text-2xl mb-8 font-bold">
+                    4. Metode Penelitian AI (Gabungan)
+                </h2>
+                <div class="mt-8 grid grid-cols-2">
+                    <p>ML & DL</p> 
+                    <p>: {{final_ml}}</p>
+                    <p>Domain DS</p>
+                    <p>: {{final_ds}}</p>
+                    <p>Domain NLP</p>
+                    <p>: {{final_nlp}}</p>
+                    <p>Domain CV</p>
+                    <p>: {{final_cv}}</p>
+                    <p>Domain Technical</p>
+                    <p>: {{final_tech}}</p>
+
+                    <p><br></p>
+                    <p><br></p>
+
+                    <p class="font-bold">Nilai Akhir</p>
+                    <p>: {{final_metode_penelitian}}</p>
+                    <p class="font-bold">Huruf</p>
+                    <p>: {{alphabet_metode_penelitian}}</p>
+                </div>
+                <div class="mt-8">
+                    <p class="font-bold">Rumus Perhitungan Nilai Metode Penelitian AI :</p>
+                    <p>(ML + DS + NLP + CV + Tech) / 5</p>
+                </div>
+            </div>
+
+            <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
+                <h2 class="text-2xl mb-8 font-bold">
+                    5. Etika Profesi & Kewirausahaan
+                </h2>
+                <div class="mt-8 grid grid-cols-2">
+                    <p class="font-bold">Nilai Akhir</p>
+                    <p>: {{final_lifeskill}}</p>
+                    <p class="font-bold">Huruf</p>
+                    <p>: {{alphabet_lifeskill}}</p>
+                </div>
+            </div>
+
+            <div class="flex-1 bg-white p-4 md:p-16 rounded-lg">
+                <h2 class="text-2xl mb-8 font-bold">
+                    6. Proyek Akhir
+                </h2>
+                <div class="mt-8 grid grid-cols-2">
+                    <p class="font-bold">Nilai Akhir</p>
+                    <p>: Sedang berlangsung</p>
+                    <p class="font-bold">Huruf</p>
+                    <p>: Sedang berlangsung</p>
+                </div>
+            </div>
+            {% endif %}
         </section>
     </body>
 </html>
