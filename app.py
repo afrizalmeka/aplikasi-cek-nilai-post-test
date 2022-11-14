@@ -96,7 +96,7 @@ def predict():
     posttest_nlp, final_nlp, alphabet_nlp = 0, 0, ""
 
     #varibel wadah untuk nilai dan absen domain cv
-    nilai_cv_1, nilai_cv_2, nilai_cv_3, nilai_cv_4, nilai_cv_5 = 0, 0, 0, 0, 0
+    nilai_cv_1, nilai_cv_2, nilai_cv_3, nilai_cv_4, nilai_cv_5, mini_project_cv = 0, 0, 0, 0, 0, 0 
     total_absen_cv = 0
     posttest_cv, final_cv, alphabet_cv = 0, 0, ""
 
@@ -241,6 +241,7 @@ def predict():
             nilai_cv_3 = (df['nilai_cv_3'][x])
             nilai_cv_4 = (df['nilai_cv_4'][x])
             nilai_cv_5 = (df['nilai_cv_5'][x])
+            mini_project_cv = (df['mini_project_cv'][x])
             total_absen_cv = int((df['total_absen_cv'][x]))
             posttest_cv = (df['posttest_cv'][x])
             final_cv = (df['final_cv'][x])
@@ -325,7 +326,7 @@ def predict():
 
                             nilai_cv_1=nilai_cv_1, nilai_cv_2=nilai_cv_2,
                             nilai_cv_3=nilai_cv_3, nilai_cv_4=nilai_cv_4,
-                            nilai_cv_5=nilai_cv_5,
+                            nilai_cv_5=nilai_cv_5, mini_project_cv=mini_project_cv,
                             total_absen_cv=total_absen_cv,
                             posttest_cv=posttest_cv, final_cv=final_cv, alphabet_cv=alphabet_cv,
 
